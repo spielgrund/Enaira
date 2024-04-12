@@ -29,6 +29,27 @@ public class Rauschen {
         return Arrays.toString(stringarray);
     }
 
+    public String rauschenHinzufuegen2(String string,double prozentsatz){
+        //System.out.println(string);
+        //String[] stringarray = string.split("");
+        //System.out.println(Arrays.toString(stringarray));
+        StringBuilder sb = new StringBuilder(string);
+
+        int i = 0;
+        double prozentvonstring = (double) string.length() / 100 * prozentsatz;
+        Gradient gradient = new Gradient(0,string.length()-1,(int)prozentvonstring);
+        //System.out.println(prozentvonstring);
+        //System.out.println(gradient);
+        for(int al : gradient.getArraylist()){
+            char c = sb.charAt(al);
+            c = (char)(c + rnd.nextInt(rndsize));
+            sb.setCharAt(al, c);
+        }
+
+        //System.out.println(Arrays.toString(stringarray));
+        return sb.toString();
+    }
+
     public String rauschenEntfernen(String[] stringarr){
         //System.out.println(Arrays.toString(stringarr));
         int hack = 0;

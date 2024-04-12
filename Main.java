@@ -14,12 +14,13 @@ public class Main {
         //io.write("nachricht1.txt",string);
         int wdh = 10;
         String[] stringarr = new String[wdh];
-        //System.out.println(rauschen.rauschenHinzufuegen(string, 25));
+        System.out.println(rauschen.rauschenHinzufuegen2(string, 50));
         for (int i = 0; i < wdh; i++) {
-            stringarr[i] = rauschen.rauschenHinzufuegen(string, 25 );
+            stringarr[i] = rauschen.rauschenHinzufuegen2(string, 75 );
         }
         System.out.println(Arrays.toString(stringarr));
         String ergebniss = rauschen.rauschenEntfernen(stringarr);
-        System.out.println(ergebniss);
+        System.out.println("/////////////////////////////");
+        System.out.println(new String(ergebniss));
     }
 }
